@@ -1,0 +1,29 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box {
+    border: 2px solid black;
+    display: inline-flex;
+    margin: 20px;
+    width: 150;
+    height: 150px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+}
+
+a.fill {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}

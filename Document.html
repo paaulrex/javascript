@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Document_files/index.css">
+</head>
+<body data-np-autofill-form-type="login" data-np-checked="1" data-np-watching="1">
+    <h2>Login</h2>
+    <input id="username" type="text" placeholder="Username" data-np-intersection-state="visible" data-np-autofill-field-type="username" data-np-uid="8b792c29-cb63-4466-b7fb-95d152b1ce7b">
+    <input id="password" type="password" placeholder="Password" data-np-intersection-state="visible" data-np-autofill-field-type="password" data-np-uid="6ffab0bf-1811-4203-9eb9-96ff2ed0b687">
+    <button id="login" type="submit" onclick="">Login</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (){
+            fetch('./index.json')
+                .then((Response) => Response.json)
+                .then((json) => {
+                    console.log(json);
+
+                    document.querySelector("#username").innerHTML = json[0].username;
+                    document.querySelector("#password").innerHTML = json[0].password;
+                })
+        })
+
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<script type="text/javascript" src="Document_files/injectedPasswordless.js"></script><span data-np-uid="6ffab0bf-1811-4203-9eb9-96ff2ed0b687" style="width: 16px; min-width: 16px; height: 16px; background-image: url(&quot;moz-extension://796b1a2e-ec14-4a59-91f9-8aa12d3f1159/assets/manifestIcons/icon.svg&quot;); background-repeat: no-repeat; background-position: left center; background-size: auto; border: medium; display: inline-block; visibility: visible; position: absolute; cursor: pointer; z-index: 998; padding: 0px; transition: none 0s ease 0s; pointer-events: all; right: 0px; left: 352.817px; top: 69.8333px; min-height: 16px;"></span><span data-np-uid="8b792c29-cb63-4466-b7fb-95d152b1ce7b" style="width: 16px; min-width: 16px; height: 16px; background-image: url(&quot;moz-extension://796b1a2e-ec14-4a59-91f9-8aa12d3f1159/assets/manifestIcons/icon.svg&quot;); background-repeat: no-repeat; background-position: left center; background-size: auto; border: medium; display: inline-block; visibility: visible; position: absolute; cursor: pointer; z-index: 998; padding: 0px; transition: none 0s ease 0s; pointer-events: all; right: 0px; left: 159px; top: 69.8333px; min-height: 16px;"></span></body></html>
